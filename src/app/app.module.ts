@@ -17,6 +17,9 @@ import { DropdowndirectiveDirective } from './Shared/dropdowndirective.directive
 import { GroceryService } from './grocery/grocery.service';
 import { RecipeService } from './recipe/recipe.service';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
     DropdowndirectiveDirective,
     RecipeStartComponent,
     RecipeEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [GroceryService, RecipeService],
+  providers: [GroceryService, RecipeService, AuthInterceptorService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
